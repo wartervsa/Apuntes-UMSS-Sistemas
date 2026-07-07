@@ -97,3 +97,5 @@ Permite al usuario dialogar con el intérprete de comandos o shell, el comportam
 - Interpreta el mandato y en caso de ser correcta lo ejecuta.
 
 - Concluida la orden muestra un mensaje o prompt y regresa a esa espera.
+
+## **Arranque del sistema**
