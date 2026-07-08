@@ -91,11 +91,11 @@ Básicamente se proporcionan servicios o llamadas al sistema a los programas, po
 Estos servicios se pueden agrupar según su funcionalidad por componente, como por ejemplo:
 
 - Gestión de procesos. - Un programa no hace nada si la CPU no ejecuta sus instrucciones. Un procesos se puede pensar como la porción de una programa o todo el programa, éste proceso requiere de recursos como tiempo de CPU, memoria, archivos, etc., para llevar a cabo su tarea. El proceso es la unidad de trabajo del sistema, entonces el sistema sería una colección de procesos(procesos que pueden ser del SO o del usuario). 
-- Gestión de memoria principal. - 
-- Gestión de almacenamiento secundario. - 
-- Operación dual. - 
-- Sistema intérpretes de órdenes - Shell. - 
-- Llamadas al sistema - API. - 
+- Gestión de memoria principal. - La memoria es un deposito de datos al que se puede acceder rápidamente y puede ser compartida por la CPU y los dispositivos de E/S. La CPU lee y escribe instrucciones en ella. 
+- Gestión de almacenamiento secundario. - Si bien la memoria principal es donde se alojan todos los procesos que están siendo ejecutados, al ser de pequeña capacidad y  volátiles, es entonces que se requiere de otro almacenaje de los programas, aquí es donde entra el almacenamiento secundario, que no es volátil y es de mayor capacidad. El SO se encarga de la actividades de gestión de discos. - Administración del espacio libre, asignación y planificación del disco. 
+- Gestión de Sistema de protección. - Ya sea por accidente o de forma malintencionada se debe tener una protección a ciertas partes del SO. Ya que se tienen varios programas ejecutados a la vez es entonces que surgen estos problemas, para lo cual se maneja una protección por ejemplo de. - Operación dual(modo usuario y modo sistema), protección de E/S(se protege de escrituras qué comprometan el so) y Protección de memoria(eliminación o sobreescritura de zonas comprometedoras). 
+- Sistema intérpretes de órdenes - Shell. - Uno de los programas más importantes del SO, es la comunicación del usuario con el sistema operativo, ya sea con interfaz gráfica o por línea de comandos. Su función es sencilla: obtener la siguiente orden y ejecutarla.
+- Llamadas al sistema - API. - Interfaz entre el sistema operativo y el programa en ejecución. Hay varias categorías de llamadas al sistema: control de procesos, manipulación de archivos, manipulación de dispositivos, mantenimiento de información y comunicaciones.... 
 
 **El sistema operativo como interfaz de usuario**
 
@@ -124,4 +124,6 @@ La invención de los transistores impulso a construir máquinas comerciales. Ac�
 Un circuito integrado es un conjunto de resistencias, transistores, condensadores... que reducen el costo, aumentan la velocidad, por lo tanto el procesador se queda más tiempo ocioso, si bien se solventa el tiempo de espera de la CPU, el cuello de botella ahora se da en los dispositivos mecánicos(impresoras, lectoras de tarjetas y de cinta)intrinsicamente más lentas que la CPU's electrónicas. Aquí es donde la nace la multiprogrmación, trabajos que si deben esperar que algún tipo de operación se complete, el procesador puede continuar ejecutando otros trabajos. El tiempo que tomaba esperar por trabajo muchas veces era bastante largo, es por esto qué nace el **tiempo compartido** en el cual se atienden simultáneamente varios requeriementos de usuarios conectados en línea a través de terminales tontas. Debido a demora de emisión de comandos por los usuarios, se podía atender a cientos de ellos simultáneamente.
 
 **Cuarta generación: Computadores personales(1971-hasta la actualidad)**
-Nace el microchip
+Nacimiento de los microprocesadores, mucha potencia en un espacio pequeño, dando lugar a computadora de uso personal, su consumo reducido costo, velocidad de procesamiento y capacidad, hizo dejar un poco de lado los tiempos de ocio de la CPU, con esta potencia de procesamiento llegan las interfaces gráficas(qué se convierten en parte importante). Uno de los pioneros fue IBM con la IBM-PC(Personal Computer) con un sistema operativo dado por Bill Gates...entre más eventos importantes como historia de las computadoras. Nacimiento de las empresas gigantes de hoy en día, Microsoft y Apple. Nacimiento del kernel de Linux(por Linus Torvalds), que se junta al proyecto de sistema operativo libre de Richard Stallman, naciendo así GNU/Linux. 
+## **Estructura de los sistemas operativos**
+
