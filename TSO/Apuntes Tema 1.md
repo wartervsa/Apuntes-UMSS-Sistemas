@@ -78,7 +78,7 @@ Conceptualmente el sistema operativo se divide en 3 capas:
 
 Recurso es todo bien o medio necesario para conseguir lo que se pretende. En un computador tenemos recursos físicos(procesador, memoria... ) y recursos lógicos(temporizador, puerto de comunicaciones... ) estos recursos son limitados, usados por procesos que una vez ya no requieran de ellos son reutilizados por los demás procesos. Debido a que no se ejecuta un solo proceso y son varios a la vez, se debe tener un control de seguridad, qué no se acceda a recursos no permitidos, información sobre el uso que se hace de los recursos.
 
-- Asignación de recursos.- Para asignar recursos a procesos, el sistema operativo mantiene estructuras que indican que recursos están libres y que proceso esta haciendo uso de que recurso/s. Se hadce la asignación según la disponibilidad y prioridad del proceso, ante peticiones de recursos coincidentes se deben resolver los conflictos.
+- Asignación de recursos.- Para asignar recursos a procesos, el sistema operativo mantiene estructuras que indican que recursos están libres y que proceso esta haciendo uso de que recurso/s. Se hace la asignación según la disponibilidad y prioridad del proceso, ante peticiones de recursos coincidentes se deben resolver los conflictos.
 
 - Protección. - Se evita que procesos accedan a recursos que ya están asignados a otros procesos para no comprometer la información de un proceso a otro.
 
@@ -86,7 +86,16 @@ Recurso es todo bien o medio necesario para conseguir lo que se pretende. En un 
 
 **Sistema operativo como máquina extendida**
 
-Básicamente se proporcionan servicios o llamadas al sistema a los programas que son como complementos del modelo de programación, qué permiten ejecutar ciertas operaciones complejas de manera cómoda y eficiente. Se les puede dar una división como: Ejecución de programas, operaciones de E/S, detección de errores, servicios de memoria, operaciones entre procesos, etc.
+Básicamente se proporcionan servicios o llamadas al sistema a los programas, por lo que se los puede tomar como complementos del modelo de programación, qué permiten ejecutar ciertas operaciones complejas de manera cómoda y eficiente. Se les puede dar una división como: Ejecución de programas, operaciones de E/S, detección de errores, servicios de memoria, operaciones entre procesos, etc.
+
+Estos servicios se pueden agrupar según su funcionalidad por componente, como por ejemplo:
+
+- Gestión de procesos. - Parte de la idea de que un programa no puede hacer algp
+- Gestión de memoria principal. - 
+- Gestión de almacenamiento secundario. - 
+- Operación dual. - 
+- Sistema intérpretes de órdenes - Shell. - 
+- Llamadas al sistema - API. - 
 
 **El sistema operativo como interfaz de usuario**
 
