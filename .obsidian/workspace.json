@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Thinkink Fast and Slow-Apuntes.md",
+                "file": "TSO/Apuntes Tema 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thinkink Fast and Slow-Apuntes"
+              "title": "Apuntes Tema 1"
             }
           }
         ],
@@ -200,8 +200,8 @@
   },
   "active": "1ec4846f1b5440b0",
   "lastOpenFiles": [
-    "TSO/Apuntes Tema 1.md",
     "Books/Thinkink Fast and Slow-Apuntes.md",
+    "TSO/Apuntes Tema 1.md",
     "Untitled 1",
     "Books"
   ]
