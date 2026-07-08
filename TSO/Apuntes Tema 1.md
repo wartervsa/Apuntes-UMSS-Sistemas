@@ -127,3 +127,13 @@ Un circuito integrado es un conjunto de resistencias, transistores, condensadore
 Nacimiento de los microprocesadores, mucha potencia en un espacio pequeño, dando lugar a computadora de uso personal, su consumo reducido costo, velocidad de procesamiento y capacidad, hizo dejar un poco de lado los tiempos de ocio de la CPU, con esta potencia de procesamiento llegan las interfaces gráficas(qué se convierten en parte importante). Uno de los pioneros fue IBM con la IBM-PC(Personal Computer) con un sistema operativo dado por Bill Gates...entre más eventos importantes como historia de las computadoras. Nacimiento de las empresas gigantes de hoy en día, Microsoft y Apple. Nacimiento del kernel de Linux(por Linus Torvalds), que se junta al proyecto de sistema operativo libre de Richard Stallman, naciendo así GNU/Linux. 
 ## **Estructura de los sistemas operativos**
 
+### **Estructura simple**
+**Sistema monolitico**
+### **Estructura compuesta**
+**Sistema por capas**
+
+**MicroKernel(cliente-servidor)**
+
+### Maquina virtual
+
+## **Sistemas por modulos**
