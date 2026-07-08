@@ -90,7 +90,7 @@ Básicamente se proporcionan servicios o llamadas al sistema a los programas, po
 
 Estos servicios se pueden agrupar según su funcionalidad por componente, como por ejemplo:
 
-- Gestión de procesos. - Parte de la idea de que un programa no puede hacer algp
+- Gestión de procesos. - Un programa no hace nada si la CPU no ejecuta sus instrucciones. Un procesos se puede pensar como la porción de una programa o todo el programa, éste proceso requiere de recursos como tiempo de CPU, memoria, archivos, etc., para llevar a cabo su tarea. El proceso es la unidad de trabajo del sistema, entonces el sistema sería una colección de procesos(procesos que pueden ser del SO o del usuario). 
 - Gestión de memoria principal. - 
 - Gestión de almacenamiento secundario. - 
 - Operación dual. - 
