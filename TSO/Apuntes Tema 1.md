@@ -99,3 +99,19 @@ Permite al usuario dialogar con el intérprete de comandos o shell, el comportam
 - Concluida la orden muestra un mensaje o prompt y regresa a esa espera.
 
 ## **Arranque del sistema**
+![[Pasted image 20260707212450.png]]
+## **Evolución de los sistemas operativos**
+
+**Primera generación: Tubos de vacío y tableros de conexión (1945-1955)**
+
+Creadas con la función de realizar cálculos, como suma, resta, división y multiplicación. Eran manipuladas por el propio creador, que era el que entendía la maquina, éstas pesaban toneladas y ocupaban cuartos enteros. La forma en que se daba "ordenes" era a través de tableros con enchufes e interruptores. Más tarde introducen las tarjetas perforadas qué seguían el mismo sistema.
+
+**Segunda generación: Transistores y procesamiento por lotes(1955-1965)**
+
+La invención de los transistores impulso a construir máquinas comerciales. Acá se introducen los primeros compiladores como FORTRAN, para lo cual se manejaban con cintas magnéticas donde se cargaba el compilador, tu programa FORTRAN, luego el ensamblador y luego se ejecuta recién el programa. Al tener una secuencia de pasos donde puede fallar algo, donde la CPU una parte del tiempo se mantenía ociosa se pensaron en formas de evitar este "descanso" de la CPU, uno de ellos es derivando el trabajo a un operador que acumulaba lotes de trabajo con requerimientos similares. Aún así seguía estando mucho tiempo sin que hacer, entonces surgen los monitores residentes que son precursores de los sistemas operativos, el programador ahora tenía que dar un grupo de tarjetas al monitor residente(a través de tarjetas de control especiales), que una vez el programa termina se devuelve el control al mismo para que seleccione a otro programa para ejecutar. A este proceso se llama procesamiento por lotes.
+
+**Tercera generación: circuitos integrados y multiprogrmación(1965-1971)**
+
+Un circuito integrado es un conjunto de resistencias, transistores, condensadores... que reducen el costo, aumentan la velocidad, por lo tanto el procesador se queda más tiempo ocioso, si bien se solventa el tiempo de espera de la CPU, el cuello de botella ahora se da en los dispositivos mecánicos(impresoras, lectoras de tarjetas y de cinta)intrinsicamente más lentas que la CPU's electrónicas. Aquí es donde la nace la multiprogrmación, trabajos que si deben esperar que algún tipo de operación se complete, el procesador puede continuar ejecutando otros trabajos. El tiempo que tomaba esperar por trabajo muchas veces era bastante largo, es por esto qué nace el **tiempo compartido** en el cual se atienden simultáneamente varios requeriementos de usuarios conectados en línea a través de terminales tontas. Debido a demora de emisión de comandos por los usuarios, se podía atender a cientos de ellos simultáneamente.
+
+**Cuarta generación: Computadores personales(1971-hasta la actualidad) **
