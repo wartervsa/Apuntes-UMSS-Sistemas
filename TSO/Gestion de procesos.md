@@ -1,11 +1,42 @@
 En las computadoras actuales se manejan varios procesos a la vez, aunque estrictamente un procesador solo maneja un proceso a la vez, pero lo hace tan rápido, donde pudo cambiar entre programas en 1 segundo, que da la sensación de paralelismo(pseudoparalelismo). Ahora ésta rápida conmutación de un proceso a otro en algún orden se llama multiprogramación. 
 **Un programa** es una entidad estática constituida por sentencias de programa que definen el comportamiento de los procesos cuando se ejecutan utilizando un conjunto de datos. 
-**Un proceso** es la ejecución del programa, es una instancia con un conjunto de datos. 
+**Un proceso** es la ejecución del programa, es una instancia del programa con un conjunto de datos. 
 Como por ejemplo sería como en programación orientada a objetos donde la clase sería el programa y los objetos serían los procesos. 
-**Creación de un proceso**
-Los sistemas operativos deben asegurar de alguna manera la existencia de todos los procesos que sean requeridos. El so está encargado de la ejecución y terminación de procesos mientras esté operando. De los sucesos principales para la creación de procesos son:
+### **Creación de un proceso**
+Los sistemas operativos deben asegurarse, de alguna manera, que puedan existir todos los procesos que sean requeridos. El so está encargado de la ejecución y terminación de procesos mientras esté operando. De los sucesos principales para la creación de procesos son:
 - Inicialización del sistema
 - La petición de un usuario para la creación de un nuevo proceso. 
 - Procesos que con ayuda de las llamadas al sistema se crea otro proceso.
 Tenemos procesos en primer plano(foreground) qué interactuan con los usuarios y trabajan para ellos y procesos se segundo plano(background) qué no están asociados con un usuario sino que tienen alguna función específica, se los llama demonios en Unix y servicios en Windows. 
-En Unix se crea un nuevo proceso a través de una llamada al sistema: **fork** qué de primera el nuevo proceso es un clon del proceso padre, mismas variables de entorno, imagen de memoria, etc., a continuación el proceso ejecuta execve o alguna llamada al sistema similar para cambiar su imagen de memoria y pasa a ejecutar un nuevo programa. 
+En Unix se crea un nuevo proceso a través de una llamada al sistema: ***fork*** qué de primera el nuevo proceso es un clon del proceso padre, mismas variables de entorno, imagen de memoria, descriptores de archivo, etc., a continuación el proceso ejecuta ***execve*** o alguna llamada al sistema similar para cambiar su imagen de memoria y pasar a ejecutar un nuevo programa. 
+En Windows con una única llamada al sistema de Win32, ***CreateProcess*** se realiza la creación del proceso y del programa. En ambos so los procesos hijo tienen espacios de dirección disjuntos. 
+### **Terminación de procesos**
+Evidentemente tarde o temprano se concluirá la tarea encomendada al proceso, entonces éste debe terminar, algunas de las razones serían:
+- El proceso finaliza su tarea y termina(volutario). 
+- El proceso encuentra algún tipo de fallo y termina(voluntario). 
+- El sistema detecta un error en el proceso y lo termina. 
+- Otro proceso termina con otro proceso. 
+Un proceso puede terminar voluntariamente, porque finalizó con su tarea. En Unix tenemos ***exit*** y en Windows ***ExitProcess***. En programas orientados a la pantalla(una interfaz gráfica) se tiene una opción para terminar con el proceso voluntariamente. 
+Para dar una mejor idea del tercer punto mencionado, puede darse el caso de que el programa quiera ejecutar una sentencia de programa ilegal, que sea incorrecto, entre otros. Para el cuarto punto de que un proceso quiera forzar la terminación de otro proceso puede usarse ***kill*** o ***killall*** en Unix, en Windows ***TerminateProcess***, en ambos casos el proceso "asesino" debe tener la autorización necesaria. 
+### **Estados de un proceso**
+Se tienen unos cuantos estados qué corresponde a un determinado tiempo o evento. 
+- Nuevo(new)
+- Ejecutandose(running), está siendo ejecutado por la CPU, que hablando de un uniprocesador solo puede estar 1 proceso en este estado. 
+- Listo para ejecutar(ready), tiene todo preparado para ejecutarse y espera su turno de CPU. 
+- Bloqueado/en espera/suspendido(waiting), no está en condiciones para ejecutarse. Espera a que algún evento ocurra, como esperar alguna operación de E/S. 
+- Terminado(terminated)
+Se puede tener una cola de listos en orden prioritario y una cola de bloqueados o en espera desordenada. 
+El sistema operativo tiene un planificador(scheduler) como parte de su núcleo, y su misión es seleccionar el proceso a ejecutar a continuación. También tenemos al despachador(dispatcher) qué se encarga de asignar el primero proceso en la cola de listos, seleccionada por el scheduler, a ser ejecutado por la CPU. 
+Ahora hacer estos cambios entre procesos requiere de preservar lo ya avanzado en uno u otro proceso, sino de que manera se mantendría la consistencia de los procesos. Debido a esto se tiene un registro de datos necesarios para su implementación. La PCB o bloque de control de proceso(Procces Control Block) mantiene la información necesaria para reanudar la ejecución del proceso, como por ejemplo:
+- Información de su estado(listo, detenido, en espera, etc.)
+- Registros de CPU, como el contador de programa, punteros de Pila, registros índice, entre otros que varían entre arquitecturas del computador. 
+- Información de planificación, como prioridad, punteros a colas de planificación y cualquier otro parámetro de planificación. 
+- Información para la administración de memoria, como pueden ser las direcciones logicas, registros de base y limite, tabla de segmentacion o tabla de páginas. 
+- Información de estado de E/S(ej. : archivos abiertos, acciones, etc. )
+- Estadísticas y otros(ej. : tipo de CPU usado, id. del proceso, id. del dueño, etc. )
+Al estar guardando la información de los procesos constantemente e intercambiarse para ser ejecutado, deriva a un costo relativamente alto de procesamiento, donde la CPU no avanza con ningún proceso, a esta acción se le denomina Context Switch(Cambio de contexto). Para reducir este problema se emplean estructuras qué se mencionaran más adelante(hilos). 
+### **Jerarquía de procesos**
+La secuencia de creación de procesos genera una jerarquía de procesos, cual árbol genealógico, donde se tiene un proceso padre y un proceso hijo. 
+En Unix mantienen de forma explícita su jerarquía partiendo del único que no tiene padre llamado ***init***(actualmente en Linux se tiene ***systemd***) qué se encarga de leer de un archivo las terminales que se tienen y crea un proceso ***login*** por cada una de ellas, luego el mismo se encarga del inicio de sesión correcto del usuario para asignarle una ***shell*** qué se encarga de crear los procesos del usuario, así generando un árbol de procesos. 
+En Windows si bien no se mantiene una jerarquía, se puede hacer una analógia de sus procesos iniciales, uno de los primeros es el ***System*** qué deriva a una sesión con el proceso ***Winlogon***, seguido de la creación de su shell ***Explorer***, y apartir de acá se crean todos los procesos de usuario como procesos hijos de el.
+## **Procesos livianos, Hilos, Hebras o Threads**
