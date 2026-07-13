@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TSO/Gestion de procesos.md",
+                "file": "TSO/Introduccion a los sistemas operativos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Gestion de procesos"
+              "title": "Introduccion a los sistemas operativos"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "fde4c6bb895612c7",
@@ -186,10 +185,12 @@
   },
   "active": "bda30bfc346d8d07",
   "lastOpenFiles": [
+    "TSO/Apuntes Tema 1.md",
+    "TSO/Introduccion a los sistemas operativos.md",
+    "TSO/Gestion de procesos.md",
     "Sistemas de informacion 2/Clases.md",
     "Pasted image 20260711132653.png",
     "Pasted image 20260711130916.png",
-    "TSO/Apuntes Tema 1.md",
     "Pasted image 20260710134528.png",
     "Sistemas de informacion 2/Flexibilidad con Scrum-Juan Palacio.md",
     "Pasted image 20260709105902.png",
