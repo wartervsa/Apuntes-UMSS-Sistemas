@@ -227,5 +227,41 @@ Hay varios, pero se tienen campos comunes como los siguientes.-
 - **Notas**. Recomendaciones adicionales(ej.: manulaes, instructivos, normas, etc.). No es completamente necesario.
 Se puede hacer en ScrumWorks, Excel, Gitlab, entre varias otras herramientas, hasta en un papelografo.
 Una buena practica es que sea visible para todos los miembros del equipo.
-
-
+### Caso práctico(3era clase)
+**Sistema de clínica veterinaria**
+**Primera parte**
+1. Identificar bien a los usuarios, con un nombre que lo describa adecuadamente. ***id***
+2. Identificar y registrar los requerimientos por usuario. ***requerimiento/descripción***
+3. Asignar prioridad a cada requerimiento. ***prioridad***
+4. Ordenar la lista por prioridad. 
+**Segunda parte**
+5. Hacer la estimación del esfuerzo, se hace según la experiencia de los desarrolladores, 
+6. Agrupamos los requerimientos en Sprints en base a la suma de la estimación del esfuerzo y también influye la cantidad de desarrolladores. ***Sprint***
+7. Como voy a probar esa funcionalidad. No es obligatorio. ***Prueba***
+8. Documentos, normas, etc. Que aportan algún tipo de ayuda para cumplir ese requerimiento. No es obligatorio. ***notas***
+### **Sprint backlog**
+Lista qué descompone las funcionalidades del product backlog en un conjunto de tareas que son más fáciles de implementar. 
+Para cada requerimiento se definen las tareas y se define que miembro del equipo llevará a cabo qué tarea. 
+La estimación del esfuerzo es en horas laborales. 
+Tambien es una herramienta de comunicación directa al equipo. 
+**Condiciones**
+- Participan el Team y el Scrum Master. 
+- Se realiza en conjunto con todos los miembros del equipo
+- Cubre todas las tareas identificadas por el equipo para conseguir el objetivo del Sprint. 
+- Solo el equipo puede modificar durante el Sprint. 
+- Cada tarea está en un rango de 4hrs. a 16hrs.
+- Debe ser visible para todo el equipo. 
+**Soporte**
+- Hoja de cálculo 
+- Herramienta colaborativa o gestión de proyectos
+- Pizarra o pared física, papelógrafo(el más sencillo). 
+**Formato del Sprint Backlog**
+Lo apropiado es diseñar el formato más cómodo para todos, teniendo en cuenta los siguientes criterios. - 
+- Incluye la información: lista de tarea, persona responsable de cada una, estado en el que se encuentra y tiempo de trabajo que queda para completarla. 
+- Solo incluye la información estrictamente necesaria.
+- El medio y modelo seleccionado debe ser la mejor opción que facilite la consulta y la comunicación diaria y directa con el equipo. 
+- Sirve de soporte para registrar en las reuniones diarias de el Sprint sobre cuanto tiempo falta para completar una tarea. 
+![[Screenshot_20260714_104836.jpg]]
+- **Sprint <#>** Número de Sprint o iteración. 
+- **Descripción del Sprint** ayuda al team a enfocarse. 
+- **ID Hist. Prod. Back** Identificador en el Product Backlog
