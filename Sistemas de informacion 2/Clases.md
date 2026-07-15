@@ -149,11 +149,11 @@ Consiste en:
 - Se divide en 2 partes que como maximo duran 4 horas:
 - Primera Parte:
 	- El product Owner presenta las Historias de usuario(como requisitos prioritarios).
-	- El TEAM hace consultas al Product Owner o a los usuarios, para aclarar dudas y complementar historias de usuarios.
+	- El TEAM hace consultas al Product Owner o a los usuarios, para aclarar dudas y complementar las historias de usuarios.
 	- Scrum Master y Team hacen sugerencias para incorporar funcionalidades.
 - Segunda Parte:
 	- Una vez definidos los requerimentos del Sprint.
-	- Se elabora la lista de tareas de cada requerimento e historias de usuario.
+	- Se elabora la lista de tareas de cada requerimento y las historias de usuario.
 	- Se hace una estimacion del esfuerzo necesario para realizar cada tarea.
 	- Los miembro del Team se auto-asignan las tareas.
 	- La estimacion de esfuerzo de cada tarea oscila entre 4 a 16 horas, no se pueden tener tareas muy simples(ej.: la accion de un boton) y digamos en caso de exceder las 16 horas, bajo criterio se decide si dividir la tarea o mantenerla unida.
@@ -335,3 +335,6 @@ Un formato de Historia de Usuario muy simple es:
 Id, Descripción y Título son escenciales.
 Una vez implementada se puede modificar, generando otra versión de la historia de usuario. 
 Cuando hacemos la historia de usuario no olvidar que se debe especificar los datos necesarios para hacer el modelo de datos. 
+**Se hace junto con el sprint backlog en el punto del Sprint Planning.**
+![[Pasted image 20260715133428.png]]
+Historias de usuario -> Modelo de datos -> Programacion -> Pruebas
