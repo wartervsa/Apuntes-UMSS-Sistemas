@@ -305,15 +305,17 @@ Se tiene cartas especiales.-
 Para cualquiera de los metodos no interesa que la estimacion de esfuerzo sea exacta, es mas referencial. Son guias y no existe ninguna formula que te diga cuanto tiempo tomara
 ## **Historias de Usuario**
 Documento vital/base del manual tecnico.
+Nos permite describir un detalle un proceso.
+Guia detallada 
 Son descripciones de funcionalidades del software, es una descripcion del COMO.
 En colaboracion con el equipo, los usuarios deben elaborar el User History.
 Las Historias de Usuario se constituyen en la documentacion base.
 Las historias de Usuario estan asociadas al Product Backlog y obviamente al Sprint Backlog.
 Cada requerimiento y sus tareas deben tener una Historia de Usuario(Para un requerimiento, con varias tareas, puede que haya una sola Historia de Usuario).
 Elaboracion y aprobacion tiene 3 pasos llamados "Las 3 C":
-1. Card. 
-2. com
-3. pletar
+1. Card: Breve descripción que servirá de recordatorio. 
+2. Conversation: Es una conversación que servirá para asegurarse que se ha entendido bien todo y concretar el objetivo 
+3. Confirmation: Tests funcionales para fijar detalles
 **Caracteristicas de la Historia de Usuario**
 - Son independientes unas de otras. No debe contener varios requetimientos.
 - Negociable. 
@@ -324,7 +326,12 @@ Elaboracion y aprobacion tiene 3 pasos llamados "Las 3 C":
 **Formato de la Historia de Usuario**
 Un formato de Historia de Usuario muy simple es:
 ![[Pasted image 20260714140623.png]]
-- **Descripcion**. Descripcion textual en detalle de como se hace, se puede hacer el uso de diagramas, esquemas, cualquier cosa para describir un proceso.
+- **ID**. Identificador del requerimiento. 
+- **Titulo**. Requerimiento. 
+- **Descripcion**. Descripcion textual en detalle de como se hace, se puede hacer el uso de gráficos, flujogramas, esquemas, cualquier herramienta de tipo gráfico. 
 - **Pruebas de aceptacion**. Como voy a probar este proceso.
 - **Elab.por** Quien nos esta dando la informacion, nombre del usuario.
 - **Responsable**. Quien lo va a programar.
+Id, Descripción y Título son escenciales.
+Una vez implementada se puede modificar, generando otra versión de la historia de usuario. 
+Cuando hacemos la historia de usuario no olvidar que se debe especificar los datos necesarios para hacer el modelo de datos. 
