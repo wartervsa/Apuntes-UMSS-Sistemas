@@ -261,7 +261,70 @@ Lo apropiado es diseñar el formato más cómodo para todos, teniendo en cuenta 
 - Solo incluye la información estrictamente necesaria.
 - El medio y modelo seleccionado debe ser la mejor opción que facilite la consulta y la comunicación diaria y directa con el equipo. 
 - Sirve de soporte para registrar en las reuniones diarias de el Sprint sobre cuanto tiempo falta para completar una tarea. 
-![[Screenshot_20260714_104836.jpg]]
+![[Pasted image 20260714111617.png]]
 - **Sprint <#>** Número de Sprint o iteración. 
 - **Descripción del Sprint** ayuda al team a enfocarse. 
 - **ID Hist. Prod. Back** Identificador en el Product Backlog
+- **Requerimiento** copiar del product backlog
+- **Responsable** el encargado de realizar esa tarea.
+- **Estado** Pediente en desarrllo, en curso y concluido.
+- **Est. Esf** Que tiempo nos va tomar hacer esa tarea/requerimiento.
+El Sprint backlog se debe realizar para cada iteracion.
+**notas del caso practico**
+Cada requerimiento sera divido en tareas que seran las funcionalidades necesarias para conseguir solventar el requerimiento.
+El estado claro estara en pendiente.
+Las tareas similares es recomendable que la misma persona que hizo una de esas repita la responsabilidad de realizar a tarea similar.
+Para la sumatoria de la estimacion de esfuerzo tomar en cuenta la cantidad de desarrolladores.
+El mismo responsable es el que calcula estimacion del esfuerzo.
+Un buen consejo sobre la adicion de una tarea es visualizar/imaginarse las cosas que tenga ese programa.
+**El incremento**
+Producto producido en un sprint, terminada y operativa
+### **Calculo de estimacion de esfuerzo**
+Necesariamente debe traducirse en dias.
+**Estimacion basada en Experiencia de expertos**
+Experencia previa del equipo de desarrollo.
+Se toma en cuenta las caracteristicas del framework o plataforma de desarrollo. Las metricas desarrollo varian.
+Product Backlog se hace la estimacion de esfuerzo de desarrollo en dias/hombre. Considerando una dedicacion ideal de 5 dias semana, vale decir 20 dias del mes.
+Para el Sprint Backlog se hace la estimacion de esfuerzo en horas/hombre. Considerando una dedicacion ideal de 8 horas diarias. 
+El tiempo estimado considera el analisis, diseno, programacion y pruebas.
+El Scrum Master discute sobre un requerimento o tarea con todos los miembros del equipo .
+**Estimacion por Puntos de Funcion**
+Puntos de Historia o History Points, es el tiempo que un programador necesita para implementar una funcion en promedio.
+Es algo que define la organizacion.
+Se toma muy en cuenta el numero de miembros en el equipo de desarrollo.
+**Estimacion Poker**
+Se inventa para evitar discusiones irrelevantes, se basa en unas fichas que esta orientadas a History Points.
+La operativa es la siguiente:
+- Cada uno de los miembros tendra sus fichas y cada vez que hay una estimacion de una tarea o requerimiento, cada miembro selecciona una de sus fichas.
+- Cuando ya se tengan preparadas todas las fichas, se revelan todas y se escoge la que mas se repita.
+- En caso de mucha discrepancia en la eleccion se discutira entre los miembros del equipo y se trata de construir una imagen comun del trabajo necesario.
+Se tiene cartas especiales.-
+- 0 = Historia ya hecha o Historia que es practicamente nada, apenas unos minutos de trabajo.
+- ? = "no tengo ni la mas remota idea".
+- taza = "tomemos un descanso"
+Para cualquiera de los metodos no interesa que la estimacion de esfuerzo sea exacta, es mas referencial. Son guias y no existe ninguna formula que te diga cuanto tiempo tomara
+## **Historias de Usuario**
+Documento vital/base del manual tecnico.
+Son descripciones de funcionalidades del software, es una descripcion del COMO.
+En colaboracion con el equipo, los usuarios deben elaborar el User History.
+Las Historias de Usuario se constituyen en la documentacion base.
+Las historias de Usuario estan asociadas al Product Backlog y obviamente al Sprint Backlog.
+Cada requerimiento y sus tareas deben tener una Historia de Usuario(Para un requerimiento, con varias tareas, puede que haya una sola Historia de Usuario).
+Elaboracion y aprobacion tiene 3 pasos llamados "Las 3 C":
+1. Card. 
+2. com
+3. pletar
+**Caracteristicas de la Historia de Usuario**
+- Son independientes unas de otras. No debe contener varios requetimientos.
+- Negociable. 
+- Valoradas por el usuario. Las Historias de Usuario deben tener un valor significativo para el usuario.
+- Estimables. Deben permitir hacer su estimacion de esfuerzo.
+- Pequenas. 
+- Verificables. Se debe poder verificar.
+**Formato de la Historia de Usuario**
+Un formato de Historia de Usuario muy simple es:
+![[Pasted image 20260714140623.png]]
+- **Descripcion**. Descripcion textual en detalle de como se hace, se puede hacer el uso de diagramas, esquemas, cualquier cosa para describir un proceso.
+- **Pruebas de aceptacion**. Como voy a probar este proceso.
+- **Elab.por** Quien nos esta dando la informacion, nombre del usuario.
+- **Responsable**. Quien lo va a programar.

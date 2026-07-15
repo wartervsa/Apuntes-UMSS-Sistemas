@@ -53,3 +53,19 @@ En un ambiente de multiprogramacion se tendran momentos donde 2 o mas procesos c
 - Recursos equilibrados -> que se matengan ocupados los recursos del sistema, pero sin que abusen los procesos de los recursos asignados, degradando el performance general.
 Se manejan diferentes colas para la organizacion de los procesos para un uso adecuado de los recursos. Se tiene una cola de dispositivos(device queues), al ser creado un proceso se coloca en la cola de trabajos, donde residen procesos listos para ejecutar pero que no se encuentran en memoria principal y tambien se tiene una cola de listos(ready queue) que contiene los procesos listo para su ejecucion y se encuentra en la memoria principal.
 Los elementos que almacena una cola de listos son las PCB's de los procesos. 
+**Reloj de interrupcion o Temporizador de intervalos**
+El sistema operativo tiene un reloj que sirve principalmente para interrumpir al procesador para comprobar si ya finalizo la tarea y tambien para controlar que no pase un tiempo establecido de ejecucion por proceso.
+### **Algoritmos de planificacion**
+Dependediendo de los objetivos de un sistema operativo se puede hacer una diferenciacion entre 3 maneras de que un proceso llegue a la cola de listos(ready queue):
+- Batch(lotes).- Llega un grupo de procesos y se decide sobre ese grupo.
+- Interactivo.- De acuerdo al requerimiento de una aplicacion(ej.: escribir con el teclado).
+- Tiempo Real.- Llega todo el tiempo.
+Un proceso mientras no finalice, obviamente si haber terminado, vuelve a la cola de listo por uno de los siguiente motivos.- 
+- Por peticion de E/S.
+- Su tiempo de ejecucion asignado expira.
+- Al ejecutar otro proceso(su hijo).
+- Ocurre una interrupcion(ej.: mover el cursor, presionar una tecla).
+ **Niveles de planififacion del procesador**
+ - Planificacion de nivel alto(largo plazo).- Tambien denominado planificacion de admision, determina que trabajos estan permitidos para competir activamente por recursos del sistema.
+ - Planificacion de nivel intermedio(mediano plazo).- Determina que procesos estan permitidos para competir por la CPU, suspende o reanuda procesos.
+ - Planificacion de bajo nivel(corto plazo).- Determina que proceso listo sera asignado a la CPU cuando esta queda disponible y es asignado al CPU(scheduling y dispatcher).
