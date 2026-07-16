@@ -230,7 +230,7 @@ Una buena practica es que sea visible para todos los miembros del equipo.
 ### Caso práctico(3era clase)
 **Sistema de clínica veterinaria**
 **Primera parte**
-1. Identificar bien a los usuarios, con un nombre que lo describa adecuadamente. ***id***
+1. Identificar bien a los usuarios, quienes usaran el sistema. ***id***
 2. Identificar y registrar los requerimientos por usuario. ***requerimiento/descripción***
 3. Asignar prioridad a cada requerimiento. ***prioridad***
 4. Ordenar la lista por prioridad. 
@@ -338,3 +338,14 @@ Cuando hacemos la historia de usuario no olvidar que se debe especificar los dat
 **Se hace junto con el sprint backlog en el punto del Sprint Planning.**
 ![[Pasted image 20260715133428.png]]
 **Desarrollo del sprint**.- Historias de usuario -> Modelo de datos -> Programacion -> Pruebas
+### **Historias Tecnicas**
+Requirimiento tecnicos o no funcionales, se define en el Sprint Backlog como tareas. 
+Las realiza el equipo. 
+Se pueden senalar algunas tareas como: la instalacion y mantenimiento de la plataforma de desarrollo, la configuracion y soporte, servicios y conectividad, etc.
+Son parte del Sprint y se maneja el mismo formato que el de las Historias de Usuario.
+![[Pasted image 20260716112326.png]]
+*Un ejemplo.*
+- **ID**. identificador del requerimiento tecnico(ej.: TEC 01).
+Es recomendable que se tenga una sola persona para desarrollar un "tipo" de tarea bajo una estandar(ej.: modelaje de datos, diseno de iconos, etc.).
+------------------------------------------------------------------------
+
