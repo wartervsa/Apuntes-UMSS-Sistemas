@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sistemas de informacion 2/Clases.md",
+                "file": "TSO/Comunicacion y Sincronizacion de procesos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clases"
+              "title": "Comunicacion y Sincronizacion de procesos"
             }
           },
           {
@@ -199,10 +199,12 @@
   },
   "active": "bda30bfc346d8d07",
   "lastOpenFiles": [
-    "Pasted image 20260715133428.png",
+    "Pasted image 20260716093015.png",
     "TSO/Gestion de procesos.md",
-    "TSO/Introduccion a los sistemas operativos.md",
+    "TSO/Comunicacion y Sincronizacion de procesos.md",
     "Sistemas de informacion 2/Clases.md",
+    "Pasted image 20260715133428.png",
+    "TSO/Introduccion a los sistemas operativos.md",
     "Pasted image 20260714140623.png",
     "Untitled.md",
     "Pasted image 20260714111617.png",

@@ -5,7 +5,7 @@ Un proyecto tiene un inicio y fin para cumplir un objetivo senalado, realizado p
 Para cumplir el objetivo del proyecto depende de varios factores:
 - **Entorno**.- No sufre modificaciones, solo se alarga en el tiempo.
 (Asociar siempre tiempo con costo)
-- **Cliente**.- El cliente debe saber lo que quiere y saber transmitirlo, cosa de que nosotros entendamos perfectamente sus necesidades y requerimentos.
+- **Cliente**.- El cliente debe saber lo que quiere y saber transmitirlo, cosa de que nosotros entendamos perfectamente sus necesidades y requerimientos.
 - **Equipo**.- Se dipone de un conjunto de personas profesionales que puedan atender esas necesidades y resolverlas.
 - **Fases**.- Elegir fases de forma coneveniente.
 Pueden surgir varios factores que afecten nuestra planeacion del proyecto, factores externos a nosotros, que no podemos manejar.
@@ -129,14 +129,14 @@ El equipo de desarrollo DEBEN ESTAR JUNTOS para una mejor comunicacion(mas direc
 Una posible distribucion seria:
 Esto es adaptable segun el proyecto y sus recursos.
 **Planificacion Inicial**
-- Se realiza una sola vez al inicio del proyecto, previo a la reunion se recomienda que el Product Owner ya lleve una lista de requetimentos.
+- Se realiza una sola vez al inicio del proyecto, previo a la reunion se recomienda que el Product Owner ya lleve una lista de requerimientos.
 - Participan los 3 roles, pero mas que todo el Product Owner y el Scrum Master. El TEAM no es obligatorio que participe y tambien podrian estar los usuarios.
 - Se determinan requisitos iniciales.
 - El resultado de la reunion se consolida con el Product Backlog.
 - El Product Owner debe tener una lista de requisitos que especifiquen el QUE de lo que se quiere del producto, no el COMO.
 - Scrum Master hace de moderador.
 - El Team aporta al Product Backlog.
-- Se definen las prioridades de los requerimentos en iteraciones o Sprints, se estima el tiempo de desarrollo y entrega.
+- Se definen las prioridades de los requerimientos en iteraciones o Sprints, se estima el tiempo de desarrollo y entrega.
 - Tambien se consideran los aspectos tecnicos del proyecto.
 - El tiempo estimado de la realizacion de la reunion inicial es generalmente de un dia(su duracion va acorde al tamano del proyecto).
 **Sprint Planning**
@@ -144,7 +144,7 @@ Consiste en:
 - Se realiza al inicio de cada iteracion o Sprint(Una por Sprint).
 - Participan los 3, pero mas que todo el Scrum Master y el Team, porque es mas tecnico.
 - Se determinan los objetivos en la iteracion.
-- Se detallan las tareas que se realizaran en cada requerimento(del Product Backlog).
+- Se detallan las tareas que se realizaran en cada requerimiento(del Product Backlog).
 - Resultado de esto consolida el Sprint Backlog.
 - Se divide en 2 partes que como maximo duran 4 horas:
 - Primera Parte:
@@ -152,11 +152,11 @@ Consiste en:
 	- El TEAM hace consultas al Product Owner o a los usuarios, para aclarar dudas y complementar las historias de usuarios.
 	- Scrum Master y Team hacen sugerencias para incorporar funcionalidades.
 - Segunda Parte:
-	- Una vez definidos los requerimentos del Sprint.
-	- Se elabora la lista de tareas de cada requerimento y las historias de usuario.
+	- Una vez definidos los requerimientos del Sprint.
+	- Se elabora la lista de tareas de cada requerimiento y las historias de usuario.
 	- Se hace una estimacion del esfuerzo necesario para realizar cada tarea.
-	- Los miembro del Team se auto-asignan las tareas.
-	- La estimacion de esfuerzo de cada tarea oscila entre 4 a 16 horas, no se pueden tener tareas muy simples(ej.: la accion de un boton) y digamos en caso de exceder las 16 horas, bajo criterio se decide si dividir la tarea o mantenerla unida.
+	- Los miembros del Team se auto-asignan las tareas.
+	- La estimacion de esfuerzo de cada tarea oscila entre 4 a 16 horas, no se pueden tener tareas muy simples(ej.: la accion de un boton) y digamos en caso de exceder las 16 horas, bajo criterio del equipo se decide si dividir la tarea o mantenerla unida.
 **Scrums diaros(Seguimiento del Sprint)**
 Consiste en:
 - Reuniones diarias donde se hace seguimiento de las actividades del dia anterior y las que se realizaran el dia presente.
@@ -213,14 +213,14 @@ Se tienen 3 elementos basicos:
 Documentacion guia del proyecto, si o si deben estar los 3.
 ### **Product Backlog**
 Inventario de funcionalidades que deben introducirse en el producto. Representa todo lo que los usuarios quieren del software. Es una guia de todo lo que se debe hacer.
-Pasada una iteracion pueden incrementarse requerimentos al Product Backlog, son cosas pequenas que no son de alto impacto, es decir un Product Backlog nunca esta terminado, siempre evolucionara de forma continua.
+Pasada una iteracion pueden incrementarse requerimientos al Product Backlog, son cosas pequenas que no son de alto impacto, es decir un Product Backlog nunca esta terminado, siempre evolucionara de forma continua.
 **Formato del Product Backlog**
 Hay varios, pero se tienen campos comunes como los siguientes.-
 ![[Pasted image 20260710134528.png]]
 *Es un formato simple.*
 - **id**. Identificador unico del requerimiento o funcionalidad, idealmente un codigo, pero no obligatorio. Sirve para asociar con la Historia del Usuario. En caso de un proyecto grande debe colocarse un identificador del tipo C001, A001, el cual diferencie un modulo o subsistema.
-- **Descripcion**. Texto breve de la funcionalidad que debera cumplir la aplicacion (ej.: revisar las cotizaciones). Cada requerimento debe ser unico, especifico.
-- **Prioridad**. Sistema de priorizacion del requerimento(ej.:1,2 3,6 o alta, media, baja).
+- **Descripcion**. Texto breve de la funcionalidad que debera cumplir la aplicacion (ej.: revisar las cotizaciones). Cada requerimiento debe ser unico, especifico.
+- **Prioridad**. Sistema de priorizacion del requerimiento(ej.:1,2 3,6 o alta, media, baja).
 - **Estimacion de esfuerzo**. Dias(enteros) que tomara implementar la funcionalidad
 - **Sprint**. En que iteracion se realizara.
 - **Prueba de aceptacion**. Criterio de validacion de lo implementado.
@@ -287,7 +287,7 @@ Se toma en cuenta las caracteristicas del framework o plataforma de desarrollo. 
 Product Backlog se hace la estimacion de esfuerzo de desarrollo en dias/hombre. Considerando una dedicacion ideal de 5 dias semana, vale decir 20 dias del mes.
 Para el Sprint Backlog se hace la estimacion de esfuerzo en horas/hombre. Considerando una dedicacion ideal de 8 horas diarias. 
 El tiempo estimado considera el analisis, diseno, programacion y pruebas.
-El Scrum Master discute sobre un requerimento o tarea con todos los miembros del equipo .
+El Scrum Master discute sobre un requerimiento o tarea con todos los miembros del equipo .
 **Estimacion por Puntos de Funcion**
 Puntos de Historia o History Points, es el tiempo que un programador necesita para implementar una funcion en promedio.
 Es algo que define la organizacion.
@@ -337,4 +337,4 @@ Una vez implementada se puede modificar, generando otra versión de la historia 
 Cuando hacemos la historia de usuario no olvidar que se debe especificar los datos necesarios para hacer el modelo de datos. 
 **Se hace junto con el sprint backlog en el punto del Sprint Planning.**
 ![[Pasted image 20260715133428.png]]
-Historias de usuario -> Modelo de datos -> Programacion -> Pruebas
+**Desarrollo del sprint**.- Historias de usuario -> Modelo de datos -> Programacion -> Pruebas
