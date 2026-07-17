@@ -349,8 +349,10 @@ Son parte del Sprint y se maneja el mismo formato que el de las Historias de Usu
 Es recomendable que se tenga una sola persona para desarrollar un "tipo" de tarea bajo un estandar(ej.: modelaje de datos, diseno de iconos, etc.).
 Para múltiples usuarios, en la situación de una Historia de Usuario, se usa una herramienta llamada Diagrama de flujo Administrativo. 
 Se divide en un recuadro por usuarios y se enumera por pasos(más o menos como un diagrama de actividades). En un recuadro en el extremo se le llama **Descripción** donde vamos describiendo los pasos. 
-Imagennn de ejemplo. 
-Dato: En caso de finalizar el producto, ya finiquitado todo, la empresa(el cliente) es dueña del software. Si quisieran agregar nuevas funcionalidades 
+Un ejemplo de mi clase:
+![[Pasted image 20260717123201.png]]
+Dato: En caso de finalizar el producto, ya finiquitado todo, la empresa(el cliente) es dueña 
+del software. Si quisieran agregar nuevas funcionalidades 
 Dato: Si se vendería una licencia de tu software es posible vender a otras empresas, si ya de esas empresas te pediría agregar nuevas funcionalidades, lo puedes agregar y ofrecer a las otras. Es más barato vender a una empresa una licencia. Solo es un ejecutable, obviamente no entregas código fuente, se lo instalas en su servidor y se lo configuras, también los capacitas.
 Dato: Cuando se realiza un producto específico para una empresa, no licencia, la empresa es dueña del producto, sería mucho más caro(según ejemplo del inge hasta 3, 4 o 5 veces más). Se entrega todo, código de fuente, documentación, servidor, etc. 
 Dato: Cloud computing, podemos vender una licencia de usuario. No es necesario instalar algo en el servidor de la empresa solicitante. Es un espacio en un servidor donde se adquiere por un tiempo. 
