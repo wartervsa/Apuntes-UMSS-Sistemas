@@ -26,13 +26,13 @@ Se tienen varios intentos de solución ante la concurrencia, como por ejemplo. -
 He aquí las soluciones más eficaces, qué cumplen con los requisitos. 
 #### **Semáforo**
 El inconveniente con la solucion anterior es que va constantemente consultando si se puede o no acceder derrochando CPU. Ahora una solución más versátil para problemas más complejos o distintos de concurrencia son los semáforos, qué aportan un visión panorámica al sistema operativo. Los semáforos son un tipo abstracto de dato que puede manipularse mediante 2 operaciones: **P**(wait o down) y **V**(signal o up). 
-Imagennnn del código 
+![[Pasted image 20260720222723.png]]
 La operación **P**(wait) simplemente comprueba si el valor es mayor a 0, en caso de que cumpla, decrementa el valor(del semáforo o señal se podría decir), ahora en el caso de no cumplir igual se decrementa, pero al ser menor que 0 se bloquea al proceso. Una forma de verlo es que se maneja al semáforo como la cantidad de recursos disponibles, una vez no tenga recursos solamente espero. Esto ocurre como operación atómica, todo o nada. Esa atomicidad es la única forma de resolver estos problemas de sincronización y evitar que se produzcan condiciones de competencia. 
 La operación **V**(signal) se encarga de incrementar el valor del semáforo, seguido de la pregunta de si el valor es menor o igual a 0, qué en caso de cumplir sigue sin más, para el caso de no cumplir manda un señal al semáforo el cual se incrementó el valor y despierta a cualquier proceso dormido por ese semáforo, puede ser de forma aleatoria. Acá aplicando esa forma de verlo, podemos ver como la liberación del recurso y de dar turno a los que estaban esperando, si es que hubieran claro. De igual manera es una operación indivisible/atómica. La operación signal nunca bloquea al proceso que la ejecuta. 
 #### **Monitores**
  Son la forma "mejorada" de los semáforos, ya que a pesar de solucionar el problema con los semáforos igual pueden haber problemas de omisión o mala ubicación de un wait o signal. 
 Los monitores son una herramienta de sincronización más estructurada qué encapsula variables compartidas en conjunto con los procedimientos para accesar a esa variables. 
-Imagennnn de la estructura del monitor 
+![[Pasted image 20260720222650.png]]
 El monitor es el encargado de realizar la exclusión mutua, un solo proceso puede entrar en el monitor. Los monitores son construcciones del lenguaje, por lo cual el compilador sabe y maneja de forma especial. Lo primero que hace es asegurarse que no haya algún proceso en el monitor, en caso de cumplir entra directamente y en caso de no cumplir se suspende hasta que se libere el monitor. Al ser el compilador y no el programador el que se encarga de la exclusión mutua resulta más complicado que surjan errores, es suficiente con colocar la sección crítica en los procedimientos del monitor. 
 En consecuencia, un monitor es un tipo de dato abstracto, y por lo tanto:
 - Todos pueden acceder a los procedimientos del monitor, pero no a las variables encapsuladas. 
