@@ -1,0 +1,2 @@
+Completar algunos detalles de esta herramienta de visualizacion del progreso de la realizacion de las tareas. Usualmente se maneja en el eje 'x' las semanas(tiempo) y en el eje 'y' la estimacion de esfuerzo.
+![[Pasted image 20260721133756.png]]

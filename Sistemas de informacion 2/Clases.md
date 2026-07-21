@@ -35,13 +35,14 @@ A principios de 2001.
 ### **12 principios del manifesto ágil**
 ![[Pasted image 20260711132653.png]]
 ### **Ciclo de desarrollo ágil**
-1. Concepto. - Qué es lo que se desea y quiere. 
+1. Concepto. - Qué es lo que se desea y quiere, la vision del proyecto y la seleccion de personas que lo llevaran a cabo.
 2. Especulación. - Determinar cual es la mejor solución, más o menos como planificación. Se realizan las actividades:
 - Desarrollo/revisión de los requisitos generales del producto. 
-- Definir en función a los requerimientos que tiempo se tardará....
-3. Exploración. - Desarrollo de las funcionalidades. 
-4. Revisión. - En cada iteración se evalúa como se está desarrollando. 
-5. Cierre. - Se entrega una versión del producto funcional. 
+- Desarrollo de una lista de funcionalidades esperadas.
+- Se construye un plan de entrega: fechas de entrega, hitos e iteraciones del desarrollo. Este plan generara la estimacion de esfuerzo en el tiempo.
+1. Exploración. - Desarrollo de las funcionalidades para generar el siguiente incremento.
+2. Revisión. - El equipo y los usuarios revisan las funcionalidades construidas hasta ese momento.
+3. Cierre. - Se entrega una versión del producto funcional. 
 # Capitulo 2 
 ## **Modelo Scrum**
 Es una metologia Ágil qué sirve para gestionar proyectos de software. Scrum viene por el rugby, la acción de ir en grupo con la pelota. Era una práctica de desarrollo de productos tecnológicos en Japón a mediados de los 80. En 1993 recién se empieza a usar y en 2001 recién nace el manifiesto agil. 
@@ -55,7 +56,7 @@ La responsabilidad recae en todo el equipo. El incremento debe ser una parte tot
 ### **Roles**
 Los que intervienen con el proyecto, se divide en:**Comprometidos**(cerdos) e **Implicados**(gallinas). 
 **Rol Product Owner(Propietario del producto)**
-Representante de los usuario. Las competencias que debe cumplir el Productor Owner.:
+Representante de los usuarios. Las competencias que debe cumplir el Productor Owner.:
 - Debe saber de proyectos. 
 - Buena capacidad de comunicacion y relacion interpersonal. 
 - Capacidad de decisión en la organización(osea que debe tener un mínimo de autoridad para la toma de decisiones).
@@ -70,7 +71,7 @@ Responsabilidades. -
 - Se encarga de viabilizar el financiamiento del proyecto(el autoriza los pagos bajo su criterio).
 - Facilita el entorno, necesidades, servicios, etc., necesarios para que el equipo desarrolle el producto. 
 **El rol del Scrum Master**
-Tambien se puede llamar Scrum Manager, lider del equipo de desarrollo, es parte del equipo de desarrollo. Debe tener las siguiente caracteristicas:
+Tambien se puede llamar Scrum Manager, lider del equipo de desarrollo, es parte del equipo de desarrollo. Tiene la responsabilidad de de hacer cumplir la metodologia, y debe tener las siguiente caracteristicas:
 - Conocimiento amplio de la metodologia Scrum.
 - Capacidad de liderazgo.
 - Alto de nivel de comunicacion y de relaciones interpersonales(con el equipo de trabajo, pero sobre todo con el Product Owner).
@@ -96,8 +97,8 @@ El Scrum Master maneja 2 frentes:
 - Responsable de llevar adelante el Sprint Review.
 - Responsable de llevar adelante el Sprint Restrospective.
 **El rol del Team - Equipo de desarrollo**
-Conformado de personas que son desarrolladores, es recomendable que como max. sean 7 personas. 
-Caracteristicas necesarias:
+Conformado de personas que son desarrolladores, es recomendable que como max. sean 7 personas. Es un equipo multidisciplinar que cubre todas las habilidades necesarias para generar el resultado.
+	Caracteristicas necesarias:
 - Es Cross(multifuncional), al no haber roles, cada miembro del equipo debe tener multiples competencias que se complementen entre si.
 - Se deben poder Auto-organizar y Auto-gestionar, se refiere a definir responsabilidades, actividades, tareas, etc.
 - Todos deben ser de tiempo completo.
@@ -157,7 +158,7 @@ Consiste en:
 	- Se hace una estimacion del esfuerzo necesario para realizar cada tarea.
 	- Los miembros del Team se auto-asignan las tareas.
 	- La estimacion de esfuerzo de cada tarea oscila entre 4 a 16 horas, no se pueden tener tareas muy simples(ej.: la accion de un boton) y digamos en caso de exceder las 16 horas, bajo criterio del equipo se decide si dividir la tarea o mantenerla unida.
-**Scrums diaros(Seguimiento del Sprint)**
+**Scrums diarios(Seguimiento del Sprint)**
 Consiste en:
 - Reuniones diarias donde se hace seguimiento de las actividades del dia anterior y las que se realizaran el dia presente.
 - Participan el Scrum Master y el Team. Podria estar el Product Owner segun se requiera.
@@ -270,7 +271,7 @@ Lo apropiado es diseñar el formato más cómodo para todos, teniendo en cuenta 
 - **Estado** Pediente en desarrllo, en curso y concluido.
 - **Est. Esf** Que tiempo nos va tomar hacer esa tarea/requerimiento.
 El Sprint backlog se debe realizar para cada iteracion.
-**notas del caso practico**
+**Notas del caso practico**
 Cada requerimiento sera divido en tareas que seran las funcionalidades necesarias para conseguir solventar el requerimiento.
 El estado claro estara en pendiente.
 Las tareas similares es recomendable que la misma persona que hizo una de esas repita la responsabilidad de realizar a tarea similar.
