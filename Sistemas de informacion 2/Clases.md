@@ -117,7 +117,6 @@ Mejor forma de incentivar la comunicacion entre los miembros del equipo, y se fu
 Tambien por estas reuniones es que que se puede hacer un feedback, una retroalimentacion.
 - Comunicacion permanente(Lo ideal es que sea presencial).
 - Permiten registrar las herramientas y elementos propios del Scrum.
-Una reunion en cuanto a tiempo, son cortas, con un max. de 15min. 
 **Tipos reunion**
 1. Planificacion Inicial
 2. Sprint Planning
@@ -127,7 +126,6 @@ Una reunion en cuanto a tiempo, son cortas, con un max. de 15min.
 **Sala de reuniones**
 Es recomendable que se disponga de una sala en la que se pueden realizar estas, proxima a la sala donde trabaja el equipo de desarrollo.
 El equipo de desarrollo DEBEN ESTAR JUNTOS para una mejor comunicacion(mas directa).
-Una posible distribucion seria:
 Esto es adaptable segun el proyecto y sus recursos.
 **Planificacion Inicial**
 - Se realiza una sola vez al inicio del proyecto, previo a la reunion se recomienda que el Product Owner ya lleve una lista de requerimientos.
