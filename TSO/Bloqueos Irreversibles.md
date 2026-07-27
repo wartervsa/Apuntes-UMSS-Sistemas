@@ -28,7 +28,15 @@ Segun Coffman en su libro ***"System deadlocks"*** menciona cuatro condiciones n
 Los interbloqueos se pueden representar en un grafo dirigido. Tenemos 2 tipos de nodos(N): recursos y procesos, tambien se tienen arcos(A) que implican lo siguiente: si un proceso apunta al recurso, hablamos de un proceso que solicita un recurso y para un recurso que apunta un proceso, hablamos de un recurso asignado al proceso apuntado.
 ![[Pasted image 20260726182331.png]]
 
-### **Metodo para manejar el interbloqueo**
-Podemos manejar 2 tipos de vision.- La que ignora el problema(algoritmo de avestruz o de Ostrich) y los que afrontan el problema. 
+### **Métodos para manejar interbloqueos**  
+Podemos dividir en 2 tipos de maneras de lidiar con los interbloqueos:  
+#### **Ignorar el problema**  
+La más simple de todas es el algoritmo avestruz o de Ostrich, qué consiste en ignorar el problema, los S. O. que manejan este método parten de la hipótesis de que los usuarios preferirían bloqueos ocasionales y seguir usando los demás distintos recursos. Claro que se tienen problemas con éste método como en las restricciones de los procesos y en el uso de recursos.  
+#### **Afrontar el problema**  
+Se manejan 4 métodos donde unos de ellos asegura con un protocolo que nunca se entrará en un abrazo mortal y otro donde se permite que ocurra un abrazo mortal pero se recupere después, claro que recuperar es más difícil y caro.  
+**Prevención de bloqueos**  
+A grandes rasgos consiste en diseñar un sistema que excluya, a priorio, la posibilidad de interbloqueo. Se consigue asegurandonos de preveer qué ocurra una de las 4 condiciones de Coffman.  
+- **Exclusión mutua**. Se tienes recursos que podrían ser manejados si una exclusión mutua, por ejemplo una impresora usando spooling, acá se hace uso de otro proceso que manejaria una cola de las impresiones, un proceso A y un proceso B pueden al mismo tiempo enviar a la cola de impresión y el spooler se encargará de imprimir ordenadamente, así preveemos el interbloqueo. Ocurre que hay recursos del sistema que no pueden permitirse este tipo de técnica, por ejemplo una tabla de procesos, transacciones, semáforos, qué deben tener exclusión mutua obligatoriamente y por lo cual debe buscar una prevención en las otras 3 condiciones.
+- **Retener y esperar**. 
 
 
