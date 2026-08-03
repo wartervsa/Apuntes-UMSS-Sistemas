@@ -21,16 +21,42 @@ La cache L2 utiliza gran parte del espacio del procesador porque requiere de mil
 ## Administración de memoria
 ### **Monoprogramación** 
 La forma más simple de administrar la memoria es ejecutando un programa a la vez, donde si requiere de otro, se retira el actual y se carga el nuevo programa. El sistema operativo puede residir en 3 posibles lugares. - en RAM, en ROM y en RAM con los controladores de dispositivos en ROM. 
-### Multiprogramación 
+### **Multiprogramación** 
 Por un lado el sistema operativo se encarga de asignar y liberar memoria, por otro lado las bibliotecas de los lenguajes se encargan de asignar y recuperar dinámicamente memoria del heap. 
-En general se dispone de un espacio de memoria contigua y de tamaño limitado sobre el que se realizan operaciones de asignación y liberación de memoria. Se tienen 3 forma de manejar la asignación dinámica de la memoria.
+En general se dispone de un espacio de memoria contigua y de tamaño limitado sobre el que se realizan operaciones de asignación y liberación de memoria. Se tienen 3 forma de manejar la asignación dinámica de la memoria.-
+- Particiones fijas 
+- Particiones variables
+- Sistema buddy binario
 #### Particiones Fijas
-Sistema de particiones fijas donde un espacio  disponible se divide a priori en partes o trozos de tamaño fijo, qué pueden ser del mismo tamaño o variar. Al momento de surgir una petición de memoria, se debe buscar una partición libre de tamaño adecuado a la petición. Debido a no saber cuanto espacio exacto necesitamos por cada petición de espacio, surge un derrochamiento de espacio que independientemente de la técnica para administrar la memoria siempre aparece, en el caso de las particiones fijas surge un derrochamiento llamado fragmentación interna. 
+Sistema de particiones fijas donde un espacio disponible se divide a priori en partes o trozos de tamaño fijo, qué pueden ser del mismo tamaño o variar. Al momento de surgir una petición de memoria, se debe buscar una partición libre de tamaño adecuado a la petición. Debido a no saber cuanto espacio exacto necesitamos por cada petición de espacio, surge un derrochamiento de espacio que independientemente de la técnica para administrar la memoria siempre aparece, en el caso de las particiones fijas surge un derrochamiento llamado fragmentación interna. 
 - **Fragmentación interna** es una parte del espacio asignado a un trabajo, que no está siendo empleada, si digamos tenemos una petición de n bytes y tenemos m bytes disponibles y m > n entonces tenemos m - n espacio sobrante, es decir fragmentación interna. 
 - **Fragmentación externa** es aquella partición disponible donde su tamaño es insuficiente para almacenar una tarea. Es muy pequeña. 
 #### Partición Variable
-Al momento de asignar un espacio se genera normalmente un espacio libre, dependiendo del tamaño de las siguiente solicitudes podemos usar o no ese espacio libre, para el caso de no poder utilizar, debido a su pequeño tamaño, se produce una fragmentación externa. Ahora como remediamos con la colocación de almacenamiento tras una reserva de espacio disponible, se tienen 4 estrategias de colocación. - 
-- First Fit. Es el más simple y lo que hace es almacenar en el primer espacio donde encuentre espacio suficiente para alojar el proceso. El S. O. revisa todas las secciones de memoria libre. 
-- Next Fit. Intenta solucionar el problema del uso frecuente de los primeros espacios libres, entonces a partir del primer asignado busca un espacio libre suficiente. 
-- Best Fit. Asigna al trabajo el espacio libre donde quede más justo, por ejemplo si tenemos 20, 15 y 10kb, y tenemos una petición de 7kb, se alojará en los 10kb. El algoritmo revisa toda la lista de espacios disponibles. 
-- Worst Fit. Asigna el espacio más grande posible al trabajo que solicite. Este algoritmo suele dar la imagen de ser malo, como su nombre lo dice, pero existen situaciones donde tiene mejores resultados. 
+En  la particion variable se asigna la memoria solicitada en un espacio libre, al momento de asignar un espacio se genera normalmente un espacio libre, dependiendo del tamaño de las siguiente solicitudes podemos usar o no ese espacio libre, para el caso de no poder utilizar, debido a su pequeño tamaño, se produce una fragmentación externa. Ahora como remediamos con la colocación de almacenamiento tras una reserva de espacio disponible, se tienen 4 estrategias basicas de colocación. - 
+- **First Fit.** Es el más simple y lo que hace es almacenar en el primer espacio donde encuentre espacio suficiente para alojar el proceso. El S. O. revisa todas las secciones de memoria libre. 
+- **Next Fit**. Intenta solucionar el problema del uso frecuente de los primeros espacios libres, empezando del primero que fue asignado y buscando un espacio libre suficiente. 
+- **Best Fit**. Asigna al trabajo el espacio libre donde quede más justo, por ejemplo si tenemos 20, 15 y 10kb, y tenemos una petición de 7kb, se alojará en los 10kb. El algoritmo revisa toda la lista de espacios disponibles. 
+- **Worst Fit**. Asigna el espacio más grande posible al trabajo que solicite. Este algoritmo suele dar la imagen de ser malo, como su nombre lo dice, pero existen situaciones donde tiene mejores resultados que los demas.
+Para poder gestionar el espacio de almacenamiento, debemos llevar un registro de los bloques y huecos existentes, con el fin de facilitar la asignacion y liberacion de espacio. Suele manejarse una lista doblemente encadenada que contiene los huecos disponibles. El orden de la esta lista suele hacerse de 3 maneras.- por LIFO, por el tamano de los huecos o por la direccion de comienzo de cada hueco.
+Para solucionar el problema de la fragmentacion externa se aplica una compactacion, la cual consiste en juntar los huecos libres formando un hueco mas grande. Esto por supuesto trae consigo un coste de operacion alto y dificil de realizar, ademas el s.o. debe detener todo para realizar la compactacion.
+Podemos agregar una forma de manejar la memoria de los objetos de un programa que ya no los utiliza, con un recolector de basura(garbage collector), aquel esta implementando en algunos lenguajes de programacion.
+#### Sistema buddy binario
+Consiste en partir a la mitad una particion disponible hasta que se ajuste a la solicitud. Si tenemos un hueco de M bytes, aquel lo podemos dividir en M/2, M/4, M/8, etc. Al momento de solicitar espacio, divide hasta que lo solicitado se ajuste a la division. Esto provova una fragmentacion interna que se trata de solventar uniendo con otra mitad correspondiente para formar un hueco que sea M/lo que se libero + el equivalente. Por ejemplo si tenemos 256kib y se solicitan 20kib entonces dividimos los 256 en 128, luego 64, 32 y continuaria con 16 pero como no es suficiente espacio se le asignan los 32kib, teniendo una frag. interna de 12kib. Fuentes externas al libro mencionan que debe ser un espacio disponible que sea potencia de 2, osea siempre manejamos un 2^n espacios disponibles, con el fin de agilizar las asignaciones con operaciones binarias a nivel de bits.
+
+## **Esquema de gestion de la memoria**
+
+Para esquematizar la gestion de la memoria analizaremos como se reparte la memoria del sistema entre los distintos procesos que estan ejecutandose en un momento dado. 
+Memoria real.-
+- Asignacion contigua.
+- Segmentacion.
+Memoria virtual.-
+- Paginacion,
+- Segmentacion paginada.
+```
+*Aclaracion necesaria, la memoria real se refiere exclusivamente a la RAM, es algo tangible, fisico, pero no se incluye la ROM ni el disco de almanacenamiento(Se considerean memoria secundaria).
+La memoria virtual es una abstraccion de esa memoria, es la forma en que el SO presenta a los programas como "ver" la memoria*
+```
+Los sistemas operativos actuales de propósito general utilizan exclusivamente gestión de memoria basada en memoria virtual.
+#### Asignacion contigua
+Aqui los procesos son asignados a una unica zona contigua de la memoria principal, delimitada por un tamano o una direccion de final.
+#### Segmentacion
