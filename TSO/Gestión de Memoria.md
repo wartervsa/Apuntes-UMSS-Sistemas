@@ -50,13 +50,33 @@ Memoria real.-
 - Asignacion contigua.
 - Segmentacion.
 Memoria virtual.-
-- Paginacion,
+- Paginacion.
 - Segmentacion paginada.
 ```
 *Aclaracion necesaria, la memoria real se refiere exclusivamente a la RAM, es algo tangible, fisico, pero no se incluye la ROM ni el disco de almanacenamiento(Se considerean memoria secundaria).
-La memoria virtual es una abstraccion de esa memoria, es la forma en que el SO presenta a los programas como "ver" la memoria*
+La memoria virtual es una abstraccion de esa memoria, es la forma en que el SO presenta a los programas como visualizar la memoria*
 ```
 Los sistemas operativos actuales de propósito general utilizan exclusivamente gestión de memoria basada en memoria virtual.
 #### Asignacion contigua
-Aqui los procesos son asignados a una unica zona contigua de la memoria principal, delimitada por un tamano o una direccion de final.
+Aqui los procesos son asignados a una unica zona contigua de la memoria principal, delimitada por un tamano o una direccion del final.
 #### Segmentacion
+La segmentacion es una extension de la asginacion contigua, donde asigna a los procesos zonas o segmentos de memoria principal contigua. La manera en que se maneja fisicamente es unidimensional, el sistema solo ve un arreglo de dividido en paginas, mientras que el programador mira subrutinas o estructuras de datos por su nombre. La segmentacion es una manera de administrar la memoria que ayuda al usuario a visualizar la memoria como un conjunto de segmentos, cada uno con su nombre y tamano(el cual puede variar dinamicamente). De esto surgen las **direcciones logicas** compuestas por un numero de segmento y desplazamiento, para traducir de la direccion logica a una direccion fisica tenemos una tabla de segmentos. La **tabla de segmentos** contiene la base de donde comienza fisicamente ese segmento y el tamano fisico del segmento.
+Una ventaja de la segmentacion es la posibilidad de proteccion por segmento, puesto que cada segmento puede ser dato o instruccion se le puede dar un permiso apropiado.
+La segmentación también facilita la compartición de código o datos entre varios procesos.
+
+#### Paginacion 
+Este esquema es el mas usado por los sistemas operativos actualues, macOS, Linux y Windows.
+La paginacion viene a confrontar un problema que surge de la segmentacion. Sucede que aquel produce fragmentacion externa que es dificil de conllevar, por lo cual la paginacion implica la division de la memoria fisica en bloques de tamano fijo(***marco***) y ademas dividir la memoria logica en ***paginas*** del mismo tamano. 
+Se utiliza, con apoyo del hardware, una tabla de paginas que relaciona una direccion logica(nro. de pagina, desplazamiento(offset)) con la direccion fisica(***marco***), el tamano de las paginas es una potencia de 2.
+Se tiene un componente llamado TLB(Traslation Look-aside Buffer) que contiene las parejas pagina-marco de las paginas que han sido recientemente usadas, renovando la informacion de la TLB con valores interes en cada momento. Es una cache especializada para la tabla de paginas que contiene valores ordenados de 64 a 1024 entradas. La MMU, que es el traductor de direcciones logicas a fisicas, primero accede a la TLB antes que a la memoria real, solamente tras un fallo(que no lo encuentra) de la TLB, es que recurre a la memoria principal y sustituye alguna pareja pagina-marco con la nueva informacion.
+El sistema operativo determina las paginas virtual de un programa en ejecucion y su soporte fisico, ya sea con un marco o una pagina de intercambio.DIcha informacion es reflejada en la tabla de paginas, ques soportada y construida por le s.o.
+Tomando en cuenta que el sistema operativo es un programa en ejecucion al igual que el programa de un usuario, se tendria que hacer un cambio constante entre el sistema operativo y el programa del usuario, por esto se maneja un pieza fisica como extension del procesador encargada de traducir la direccion logica a fisica. Dicho hardware especial es llamado MMU(Memory Management Unit).
+Cada proceso tiene su propio mapa de memoria y su propia tabla de páginas que define dicho mapa, cuando la CPU se concede a otro proceso, hay que cambiar la tabla de páginas a la del nuevo proceso. La paginación en general encarece los cambios de contexto. La seguridad sale gratis, ya que cada proceso sólo puede accesar las páginas que están en su tabla de páginas.
+Existe un registro para indicar a la MMU la direccion de memoria donde se encuentra la tabla de paginas, dicho registro se denomina RIED(Registro Identificador del Espacio de Direccionamiento).
+**Que ocurre si el tamano de la pagina es muy pequeno?**
+Estariamos degradando la velocidad de acceso a las paginas tanto de la TLB como de la RAM, por un exceso de indices lo cual ocupa ademas mas espacio.
+**Que ocurre si el tamano de la pagina es muy grande?**
+Se produce mucha fragmentacion interna.
+A dia de hoy, en 2026, los sistemas operativos habilitan una tecnologia llamada Huge Pages(paginas gigantes, que permite manejar paginas mas grandes para ciertos programas que se vea conveniente.
+
+
