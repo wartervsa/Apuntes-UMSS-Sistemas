@@ -60,8 +60,8 @@ Los sistemas operativos actuales de propósito general utilizan exclusivamente g
 #### Asignacion contigua
 Aqui los procesos son asignados a una unica zona contigua de la memoria principal, delimitada por un tamano o una direccion del final.
 #### Segmentacion
-La segmentacion es una extension de la asginacion contigua, donde asigna a los procesos zonas o segmentos de memoria principal contigua. La manera en que se maneja fisicamente es unidimensional, el sistema solo ve un arreglo de dividido en paginas, mientras que el programador mira subrutinas o estructuras de datos por su nombre. La segmentacion es una manera de administrar la memoria que ayuda al usuario a visualizar la memoria como un conjunto de segmentos, cada uno con su nombre y tamano(el cual puede variar dinamicamente). De esto surgen las **direcciones logicas** compuestas por un numero de segmento y desplazamiento, para traducir de la direccion logica a una direccion fisica tenemos una tabla de segmentos. La **tabla de segmentos** contiene la base de donde comienza fisicamente ese segmento y el tamano fisico del segmento.
-Una ventaja de la segmentacion es la posibilidad de proteccion por segmento, puesto que cada segmento puede ser dato o instruccion se le puede dar un permiso apropiado.
+La segmentacion es una extension de la asginacion contigua, donde asigna a los procesos zonas o segmentos de memoria principal contigua. La manera en que se maneja fisicamente es unidimensional, el sistema solo ve un arreglo de dividido en paginas, mientras que el programador mira subrutinas o estructuras de datos por su nombre. La segmentacion es una manera de administrar la memoria que ayuda al usuario a visualizar la memoria como un conjunto de segmentos, cada uno con su nombre y tamano(el cual puede variar dinamicamente). De esto surgen las **direcciones logicas** compuestas por un numero de segmento y desplazamiento. Para traducir de la direccion logica a una direccion fisica tenemos una tabla de segmentos. La **tabla de segmentos** contiene la base de donde comienza fisicamente ese segmento y el tamano fisico del segmento.
+Una ventaja de la segmentacion es la posibilidad de proteccion por segmento, puesto que cada segmento puede ser dato o instruccion y podemos asignar un permiso apropiado.
 La segmentación también facilita la compartición de código o datos entre varios procesos.
 
 #### Paginacion 
@@ -77,6 +77,18 @@ Existe un registro para indicar a la MMU la direccion de memoria donde se encuen
 Estariamos degradando la velocidad de acceso a las paginas tanto de la TLB como de la RAM, por un exceso de indices lo cual ocupa ademas mas espacio.
 **Que ocurre si el tamano de la pagina es muy grande?**
 Se produce mucha fragmentacion interna.
-A dia de hoy, en 2026, los sistemas operativos habilitan una tecnologia llamada Huge Pages(paginas gigantes, que permite manejar paginas mas grandes para ciertos programas que se vea conveniente.
-
-
+A dia de hoy, en 2026, los sistemas operativos habilitan una tecnologia llamada Huge Pages(paginas gigantes) que permite manejar paginas mas grandes para ciertos programas que se vea conveniente.
+##### Tabla de páginas 
+Tenemos dos maneras de organizar las tablas. - tabla directa y tabla inversa. 
+**Tabla directa**
+Puede ser única o una por cada proceso, tiene una entrada por cada página virtual, entrada que contiene el número de marco y otro registro que verifica si se encuentra o no en memoria principal. La tabla directa puede ser de un nivel o multinivel. 
+**Tabla directa de un nivel**
+Imagen de la tabla directa de un nivel****
+**Tabla directa multinivel**
+Las computadoras actuales pueden llegar a tener hasta 4 niveles. 
+Imagen de la tabla directa multinivel****
+La dirección se divide en la cantidad de niveles y el valor offset. Las tablas de nivel superior contienen punteros a las subtablas qué le corresponden y solo la del último nivel contiene los marcos, bit de referencia, bit de ausente/presente y bit de modifica. Todos los niveles suelen incluir permisos(rwx), los niveles dependientes de otros tienen el permiso del nivel superior y del último nivel los permisos de algunas páginas. 
+**Tabla de páginas inversa**
+Tiene una entrada por cada marco, que indica la página asignada al marco y el proceso al que pertenece la página. 
+#### Segmentación paginada 
+Es la unión de dos esquemas de gestión de memoria, segmentacion y paginación. No se puede decir que una es superior a la otra, entonces lo que hacen algunos sistemas es unir lo mejor de cada uno. Una de las técnicas más aplicadas es mostrar al usuario segmentos qué están dividos en páginas de tamaño fijo. Aplicando ésto tenemos la ventaja de eliminar la fragmentación interna y facilitando la ubicación, ya que cada marco libre puede ser asignado a una página. 
