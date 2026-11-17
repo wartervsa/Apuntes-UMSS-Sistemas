@@ -1,4 +1,4 @@
-En las computadoras actuales se manejan varios procesos a la vez, aunque estrictamente un procesador solo maneja un proceso a la vez, pero lo hace tan rápido, donde pudo cambiar entre programas en 1 segundo, que da la sensación de paralelismo(pseudoparalelismo). Ahora ésta rápida conmutación de un proceso a otro en algún orden se llama multiprogramación. 
+En las computadoras actuales se manejan varios procesos a la vez, aunque estrictamente un procesador solo maneja un proceso a la vez, pero lo hace tan rápido, donde pudo cambiar entre varios programas en 1 segundo, que da la sensación de paralelismo(pseudoparalelismo). Ahora ésta rápida conmutación de un proceso a otro en algún orden se llama multiprogramación. 
 **Un programa** es una entidad estática constituida por sentencias de programa que definen el comportamiento de los procesos cuando se ejecutan utilizando un conjunto de datos. 
 **Un proceso** es la ejecución del programa, es una instancia del programa con un conjunto de datos. 
 Como por ejemplo sería como en programación orientada a objetos donde la clase sería el programa y los objetos serían los procesos. 
@@ -65,17 +65,17 @@ Un proceso mientras no finalice, obviamente si haber terminado, vuelve a la cola
 - Su tiempo de ejecucion asignado expira.
 - Al ejecutar otro proceso(su hijo).
 - Ocurre una interrupcion(ej.: mover el cursor, presionar una tecla).
- **Niveles de planificacion del procesador**
- - Planificacion de nivel alto(largo plazo).- Tambien denominado planificacion de admision, determina que trabajos estan permitidos para competir activamente por recursos del sistema.
- - Planificacion de nivel intermedio(mediano plazo).- Determina que procesos estan permitidos para competir por la CPU, suspende o reanuda procesos.
- - Planificacion de bajo nivel(corto plazo).- Determina que proceso listo sera asignado a la CPU cuando esta queda disponible y es asignado al CPU(scheduling y dispatcher).
- **Planificación Apropiativa y No Apropiativa**
+#### **Niveles de planificacion del procesador**
+ - Planificación de alto nivel (largo plazo). Determina a qué trabajos se les va a permitir competir activamente por los recursos del sistema, lo cual se denomina Planificación de admisión.
+ - Planificacion de nivel intermedio(mediano plazo).- Determina a qué procesos se les puede permitir competir por la CPU. Responde a fluctuaciones a corto plazo en la carga del sistema y efectúa “suspensiones” y “activaciones” (reanudaciones) de procesos. Debe ayudar a alcanzar ciertas metas en el rendimiento total del sistema.
+ - Planificacion de bajo nivel(corto plazo).- Determina a qué proceso listo se le asigna la CPU cuando esta queda disponible y asigna la CPU al mismo, es decir que “despacha” la CPU al proceso. La efectúa el Despachador del Sistema Operativo.
+#### **Planificación Apropiativa y No Apropiativa**
 La planificación no apropiativa es aquella que una vez se da la CPU a un proceso, éste se ejecuta hasta terminar o hasta que ocurra un determinado evento. 
 La planificación apropiativa sucede que la CPU está ejecutando un proceso pero puede ser interrumpido y llevado a la cola de listos por decisión del sistema operativo. Si bien los no apropiativos requieren un mayor costo, se ve beneficiado el sistema al evitar que un proceso se apropie de la CPU. Para estos cambios el sistema operativo debe ser capaz de diferenciar procesos criticos, por ejemplo una llamada al sistema(system call), la escritura de un archivo, entre otros. 
 - FCFS o FIFO son no apropiativos, porque capturan la CPU hasta terminar o requieren E/S. 
 - SJF(Shortest-job-first) es apropiativo y no, si es apropiativo ocurre cuando llega un proceso cuyo tiempo es menor que el del activo, el sistema operativo puede tomar la decisión de interrumpir el que se está ejecutando o no. 
 - Por Prioridades puede apropiativo o no, cuando es apropiativo puede haber llegado un proceso con mayor prioridad y es interrumpido. En no apropiativo si llega un proceso de mayor prioridad no es interrumpido pero se lo llevo al frente de la cola. 
 - Round Robin es apropiativo, porque se le da un tiempo máximo de ejecución a cada proceso y una vez que llega es interrumpido.
-**Planificación de procesos en Linux(POSIX) y Windows(Win32)**
+#### **Planificación de procesos en Linux(POSIX) y Windows(Win32)**
 En Windows dicen manejar solo hilos pero se puede comprobar que también usan procesos pesados. Se manejan dos clases de planificación, Prioridad de Tiempo Real(16 a 31) y Prioridad Dinámica(1 a 15). Internamente se maneja RR y se puede hacer la diferenciación entre los procesos del sistema, que no puede ser modificado su prioridad y procesos del usuario, que es posible cambiar su prioridad. Si llega un thread de mayor prioriodad, el procesador es asignado a este. La prioridad va de menor a mayor y la prioridad de un hilo no puede ser modificada, pero si del proceso pesado.
 En Linux se usan 3 tipos de clases con prioridades.- Normal(100-139), RR fija(0-99) y FIFO fija(0-99), aca las prioridades bajas son favorecidas y podemos cambiar practicamente las prioridades de todo.

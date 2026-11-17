@@ -19,9 +19,9 @@ Corresponde al sistema operativo coordinar el uso de estas memorias.
 - **Disco duro**.  Con una velocidad promedio de 8ms. 
 La cache L2 utiliza gran parte del espacio del procesador porque requiere de millones de transistores para formar la Caché. Se crea utilizando SRAM(Static Random Access Memory) que para ser construido requiere por lo general 6 transistores por bit. Por otro lado la memoria RAM normal utiliza DRAM(Dinamic Random... )que puede crearse con un transistor por bit. 
 ## Administración de memoria
-### **Monoprogramación** 
+### Monoprogramación 
 La forma más simple de administrar la memoria es ejecutando un programa a la vez, donde si requiere de otro, se retira el actual y se carga el nuevo programa. El sistema operativo puede residir en 3 posibles lugares. - en RAM, en ROM y en RAM con los controladores de dispositivos en ROM. 
-### **Multiprogramación** 
+### Multiprogramación 
 Por un lado el sistema operativo se encarga de asignar y liberar memoria, por otro lado las bibliotecas de los lenguajes se encargan de asignar y recuperar dinámicamente memoria del heap. 
 En general se dispone de un espacio de memoria contigua y de tamaño limitado sobre el que se realizan operaciones de asignación y liberación de memoria. Se tienen 3 forma de manejar la asignación dinámica de la memoria.-
 - Particiones fijas 
@@ -92,3 +92,4 @@ La dirección se divide en la cantidad de niveles y el valor offset. Las tablas 
 Tiene una entrada por cada marco, que indica la página asignada al marco y el proceso al que pertenece la página. 
 #### Segmentación paginada 
 Es la unión de dos esquemas de gestión de memoria, segmentacion y paginación. No se puede decir que una es superior a la otra, entonces lo que hacen algunos sistemas es unir lo mejor de cada uno. Una de las técnicas más aplicadas es mostrar al usuario segmentos qué están dividos en páginas de tamaño fijo. Aplicando ésto tenemos la ventaja de eliminar la fragmentación interna y facilitando la ubicación, ya que cada marco libre puede ser asignado a una página. 
+## **Memoria virtual**
