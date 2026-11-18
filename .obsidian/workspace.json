@@ -48,9 +48,22 @@
               "icon": "lucide-file",
               "title": "Gestión de Memoria"
             }
+          },
+          {
+            "id": "915ab8eef1e623c1",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "TaskNotes/Views/calendar-default.base",
+                "viewName": "Calendar"
+              },
+              "icon": "tasknotes-simple",
+              "title": "calendar-default"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -195,6 +208,16 @@
               "icon": "lucide-list",
               "title": "Outline of Apuntes Tema 1"
             }
+          },
+          {
+            "id": "b25e059eca061e09",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ]
       }
@@ -212,17 +235,46 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "tasknotes:Open mini calendar view": true,
+      "tasknotes:Open calendar view": false,
+      "tasknotes:Open tasks view": false,
+      "tasknotes:Open agenda view": true,
+      "tasknotes:Open Kanban board": true,
+      "tasknotes:Open Pomodoro timer": true,
+      "tasknotes:Create new task": false
     }
   },
-  "active": "ee32928b2505b5a4",
+  "active": "915ab8eef1e623c1",
   "lastOpenFiles": [
+    "TaskNotes/Views/kanban-default.base",
+    "TaskNotes/Views/calendar-default.base",
+    "TaskNotes/Views/agenda-default.base",
+    "TaskNotes/Tasks/Estudio AWS AI Practitioner.md",
+    "TaskNotes/Tasks/Terminar el primer curso de AWS Skill Builder.md",
+    "TaskNotes/Tasks/Arreglar wifi.md",
+    "TaskNotes/Views/tasks-default.base",
+    "TaskNotes/Views/relationships.base",
+    "TaskNotes/Views/pomodoro-stats.base",
+    "TaskNotes/Views/mini-calendar-default.base",
+    "TaskNotes/Tasks",
+    "TSO/Gestión de Memoria.md",
+    "TaskNotes/Views",
+    "TaskNotes",
+    "_mdbase/settings/dev.tasknotes.md",
+    "_mdbase/contracts/tasknotes.settings/1.1.0.md",
+    "_mdbase/contracts/mdbase.app-settings/2.0.0.md",
+    "_mdbase/contracts/tasknotes.settings/1.0.0.md",
+    "_mdbase/contracts/mdbase.app-settings/1.0.0.md",
+    "_mdbase/contracts/tasknotes.task/0.3.0-rc.6.md",
+    "_mdbase/README.md",
+    "_mdbase/types/task.md",
+    "_mdbase/types/tasknotes-settings.md",
     "TSO/Gestion de procesos.md",
     "TSO/Introduccion a los sistemas operativos.md",
     "TSO/Parte práctica.md",
     "TSO/Bloqueos Irreversibles.md",
     "TSO/Comunicacion y Sincronizacion de procesos.md",
-    "TSO/Gestión de Memoria.md",
     "Untitled.md",
     "TSO/Pasted image 20260707212450.png",
     "TSO/Pasted image 20260726182331.png",
@@ -239,9 +291,6 @@
     "TSO/Pasted image 20260716112326.png",
     "TSO/Pasted image 20260716093015.png",
     "TSO/Apuntes Tema 1.md",
-    "Sistemas de informacion 2/Flexibilidad con Scrum-Juan Palacio.md",
-    "Sistemas de informacion 2",
-    "Untitled 1",
-    "Books"
+    "Sistemas de informacion 2/Flexibilidad con Scrum-Juan Palacio.md"
   ]
 }
