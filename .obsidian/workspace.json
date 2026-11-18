@@ -8,48 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bda30bfc346d8d07",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TSO/Bloqueos Irreversibles.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bloqueos Irreversibles"
-            }
-          },
-          {
-            "id": "6859068c22f6707d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TSO/Gestión de Memoria.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Gestión de Memoria"
-            }
-          },
-          {
-            "id": "ee32928b2505b5a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TSO/Gestión de Memoria.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Gestión de Memoria"
-            }
-          },
-          {
             "id": "915ab8eef1e623c1",
             "type": "leaf",
             "state": {
@@ -62,8 +20,7 @@
               "title": "calendar-default"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -138,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TSO/Apuntes Tema 1.md",
+                "file": "TaskNotes/Views/calendar-default.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Apuntes Tema 1"
+              "title": "Backlinks"
             }
           },
           {
@@ -247,9 +204,11 @@
   },
   "active": "915ab8eef1e623c1",
   "lastOpenFiles": [
-    "TaskNotes/Views/kanban-default.base",
-    "TaskNotes/Views/calendar-default.base",
+    "TaskNotes/Tasks/Estudiar Calculo 2.md",
     "TaskNotes/Views/agenda-default.base",
+    "TaskNotes/Views/calendar-default.base",
+    "TaskNotes/Tasks/Hablar sobre la problematica del CBA.md",
+    "TaskNotes/Views/kanban-default.base",
     "TaskNotes/Tasks/Estudio AWS AI Practitioner.md",
     "TaskNotes/Tasks/Terminar el primer curso de AWS Skill Builder.md",
     "TaskNotes/Tasks/Arreglar wifi.md",
@@ -290,7 +249,6 @@
     "TSO/Pasted image 20260717123201.png",
     "TSO/Pasted image 20260716112326.png",
     "TSO/Pasted image 20260716093015.png",
-    "TSO/Apuntes Tema 1.md",
-    "Sistemas de informacion 2/Flexibilidad con Scrum-Juan Palacio.md"
+    "TSO/Apuntes Tema 1.md"
   ]
 }
