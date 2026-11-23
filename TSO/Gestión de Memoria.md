@@ -84,12 +84,34 @@ Tenemos dos maneras de organizar las tablas. - tabla directa y tabla inversa.
 **Tabla directa**
 Puede ser única o una por cada proceso, tiene una entrada por cada página virtual, entrada que contiene el número de marco y otro registro que verifica si se encuentra o no en memoria principal. La tabla directa puede ser de un nivel o multinivel. 
 **Tabla directa de un nivel**
-Imagen de la tabla directa de un nivel****
+![[Screenshot_20261119_172310.png]]
 **Tabla directa multinivel**
 Las computadoras actuales pueden llegar a tener hasta 4 niveles. 
-Imagen de la tabla directa multinivel****
+![[Screenshot_20261119_172336.png]]
 La dirección se divide en la cantidad de niveles y el valor offset. Las tablas de nivel superior contienen punteros a las subtablas qué le corresponden y solo la del último nivel contiene los marcos, bit de referencia, bit de ausente/presente y bit de modifica. Todos los niveles suelen incluir permisos(rwx), los niveles dependientes de otros tienen el permiso del nivel superior y del último nivel los permisos de algunas páginas. 
 **Tabla de páginas inversa**
 Tiene una entrada por cada marco, que indica la página asignada al marco y el proceso al que pertenece la página. 
 #### Segmentación paginada 
 Es la unión de dos esquemas de gestión de memoria, segmentacion y paginación. No se puede decir que una es superior a la otra, entonces lo que hacen algunos sistemas es unir lo mejor de cada uno. Una de las técnicas más aplicadas es mostrar al usuario segmentos qué están dividos en páginas de tamaño fijo. Aplicando ésto tenemos la ventaja de eliminar la fragmentación interna y facilitando la ubicación, ya que cada marco libre puede ser asignado a una página. 
+### Memoria virtual 
+Hace mucho tiempo se toparon con un problema, sucede que la memoria al ser muy costosa no se podia tener tanta y se terminaba llenando, es por esto que se idearon una manera de sobrellevar esa cantidad limitada de memoria. La solucion que dieron era segmentar los programas y manejaban trozos de memoria cargandose dinamicamente en cuanto se requiera otra parte, el resto quedaba en disco.  Dicho proceso se llamaba superposicion y el intercambio estaba a cargo del sistema operativo pero el programador era el que segmentaba el programa, asi que buscando una manera en que se realizace por si solo surge el metodo de Fotheringham conocido como "memoria virtual". La memoria virtual parte de la base en que los datos y la pila de un programa pueden exceder la memoria fisica disponible para el. Asi podemos manejar un programa que requiere 16M en una memoria de 4M escogiendo bien los 4M, todo lo que se use en ese momento se carga en memoria y el resto se matiene en disco. En multiprogramacion claro que se puede usar tambien, ocupando la memoria con varios fragmentos de distintos programas y haciendo el mismo proceso de intercambio memoria-disco.
+Las políticas que definen el comportamiento de un sistema de memoria virtual son las siguientes:
+• **Política de localización**. Permite localizar una determinada página dentro de la
+memoria secundaria.
+• **Política de extracción**. Define cuándo se transfiere una página desde la memoria
+secundaria a la principal. La memoria virtual es su formas mas "fiel" opera bajo demanda, trayendo unicamente a memoria al momento de uso. En muchos sistemas operativos se hace una lectura anticipada, trayendo paginas que pueden reconocerse como proximas(por las referencias en los codigos) a memoria, puede denominarse prepaginacion. 
+Al momento de arrancar un programa pueden surgir muchos fallos de pagina y algunos sistemas operativos registran estos fallos y van agregando esa paginas faltantes en su siguiente arranque.
+• **Política de ubicación**. Si hay varios marcos libres, establece cuál de ellos se utiliza para
+almacenar la página que se trae a memoria principal.
+• **Política de reemplazo**. En caso de que no haya marcos libres, determina qué página
+debe ser desplazada de la memoria principal para dejar sitio a la página entrante. Aca tenemos varias manera de manejar el reemplazo de paginas, todas ellas buscan minizar la taza de fallos de pagina.
+• **Política de actualización**. Rige cómo se propagan las modificaciones de las páginas en
+memoria principal a la memoria secundaria. Dado la diferencia tan grande de la memoria principal con la secundaria, no es factible actualizar en ese mismo momento, entonces se establece una politica de escritura diferida. Aquella se efectura solo cuando la pagina no haya salido de memoria principal y haya sido modificada. La actualizacion se intenta hacer por lotes o cuando el sistema esta menos cargado.
+• **Política de reparto de espacio entre los procesos**. Decide cómo se reparte la
+memoria física entre los procesos existentes en un determinado instante. En un sistema con multiprogramacion es necesario determinar la cantidad de marcos de pagina que tendra cada proceso. Existen 2 tipos de estrategias de asignacion de marcos de pagina:
+#### Asignacion fija
+Se asignan marcos de pagina fijos a un proceso y solamente puede reemplazar los marcos por aquellos asignados.
+#### Asignacion dinamica
+Esta estrategia permite usar marcos de pagina segun la necesidad del proceso en diferentes instantes de tiempo. Con esa estrategia se pueden tener 2 tipos de reemplazo.-
+- Reemplazo local, aumenta y disminuye lo que ya tiene segun su necesidad.
+- Reemplazo global, los procesos compiten por la memoria, quitandose entre si las paginas.

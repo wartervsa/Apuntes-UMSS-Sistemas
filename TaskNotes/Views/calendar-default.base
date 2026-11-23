@@ -65,6 +65,6 @@ views:
     showTimeblocks: true
     showPropertyBasedEvents: true
     createDailyNotesFromDateLinks: true
-    calendarView: timeGridWeek
+    calendarView: dayGridMonth
     customDayCount: 3
     firstDay: 1

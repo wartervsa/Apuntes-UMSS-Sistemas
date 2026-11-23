@@ -8,6 +8,7 @@ dateCreated: 2026-11-17T20:52:24.774-04:00
 dateModified: 2026-11-17T20:52:24.774-04:00
 tags:
   - task
+  - universidad
 id: 3fb66377-84e3-49dd-85ca-fe28b19f6f83
 ---
 
